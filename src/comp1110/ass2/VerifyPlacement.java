@@ -18,5 +18,4 @@ public class VerifyPlacement {
         // FIXME Task 6: determine whether a placement sequence is valid
         return false;
     }
-    //this class is to check the place of the tiles cannot be overlap
 }
