@@ -13,10 +13,12 @@ import javafx.stage.Stage;
 
 /**
  * A very simple viewer for piece placements in the Metro game.
+ *
  * <p>
  * NOTE: This class is separate from your main game class.  This
  * class does not play a game, it just illustrates various piece
  * placements.
+ * 这个类是从你主要的game类分开的。这个类不是play a game，它只是说明了不同的图块的放置。
  */
 public class Viewer extends Application {
     /* board layout */
@@ -32,6 +34,7 @@ public class Viewer extends Application {
 
     /**
      * Draw a placement in the window, removing any previously drawn one
+     * 在窗口中绘制位置，删除以前绘制的位置
      *
      * @param placement A valid placement string
      */
