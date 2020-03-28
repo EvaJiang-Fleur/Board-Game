@@ -10,7 +10,11 @@ public class Metro {
      * 'a' and 'd' inclusive (tracks); and
      * - have as its fifth and sixth characters digits between 0 and 7 inclusive
      * (column and row respectively).
-     *
+     *task2
+     * * 判断一个图块的放置是不是well-formed。一个图块的放置是well-formed，他必须：
+     * * 包括六个character
+     * * 首字母、第二字母、第三字母和第四字母在“a”和“d”之间（包括track）；
+     * * 第五和第六个字符的数字介于0和7之间（包括*）（分别为列和行）。
      * @param piecePlacement A String representing the piece to be placed
      * @return True if this string is well-formed
      */
