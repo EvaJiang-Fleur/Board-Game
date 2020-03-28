@@ -1,8 +1,10 @@
 package comp1110.ass2;
 
 public class VerifyPlacement {
+    //This class checks whether the place of each pieces is overlap
+    //this class can also check each tiles is in the board or not(the tiles cannot be out of the boundaries)
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
-        // FIXME Task 2: determine whether a piece placement is well-formed判断一个图块的放置是不是well-formed
+        // FIXME Task 2: determine whether a piece placement is well-formed
         return false;
     }
 
