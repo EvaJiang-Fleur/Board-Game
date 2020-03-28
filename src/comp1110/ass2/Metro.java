@@ -38,7 +38,9 @@ public class Metro {
      *
      * @param placement A String representing the placement of all tiles on the
      *                  board
+     *  @参数 placement 一个string代表表示板上所有图块位置的字符串
      * @return true if this placement sequence is well-formed
+     *  @return true如果这个placement sequence 是well-formed。
      */
     public static boolean isPlacementSequenceWellFormed(String placement) {
         // FIXME Task 3: determine whether a placement sequence is well-formed
