@@ -90,11 +90,7 @@ public class Metro {
      * @参数 placementSequence 在棋盘上的放置序列
      * @return Whether this placement string is valid.
      * @return 这个放置string是否是有效的
-     *
 
-     *
-     *
-     *
      */
     public static boolean isPlacementSequenceValid(String placementSequence) {
         // FIXME Task 6: determine whether a placement sequence is valid
@@ -109,14 +105,10 @@ public class Metro {
      * @param numberOfPlayers   The number of players in the game
      * @return an array containing the scores for all players
      * Task 7
-     *      * Determine the current score for the game.
-     *      *判断游戏现在的分数
-     *      * @param placementSequence a String representing the sequence of piece placements made so far in the game
-     *      * @参数 placementSequence 一个字符串，表示到目前为止在游戏中放置的图块的顺序
-     *      * @param numberOfPlayers   The number of players in the game
-     *      * @参数 numberOfPlayers 游戏中的players数量
-     *      * @return an array containing the scores for all players
-     *      * @return 一个数组包括所有players的分数
+     *判断游戏现在的分数
+     *@参数 placementSequence 一个字符串，表示到目前为止在游戏中放置的图块的顺序
+     *@参数 numberOfPlayers 游戏中的players数量
+     *@return 一个数组包括所有players的分数
      */
     public static int[] getScore(String placementSequence, int numberOfPlayers) {
         // FIXME Task 7: determine the current score for the game
@@ -126,28 +118,19 @@ public class Metro {
     /**
      * Task 9
      * Given a placement sequence string, generate a valid next move.
-     *
+     *给定放置序列字符串，生成有效的下一步移动。
      * @param placementSequence a String representing the sequence of piece placements made so far in the game
      * @param piece             a four-character String representing the tile just drawn
      * @param hand              A tile in the player's hand, which they can choose to play instead of the drawn tile.
      *                          If the player does not currently hold a tile, this parameter will be null.
      * @param numberOfPlayers   The number of players in the game
      * @return A valid placement of other the drawn tile or the tile from the player's hand (if it is not empty).
-     *   /**
-     *      * Task 9
-     *      * Given a placement sequence string, generate a valid next move.
-     *      *给定放置序列字符串，生成有效的下一步移动。
-     *      * @param placementSequence a String representing the sequence of piece placements made so far in the game
-     *      * @参数  placementSequence 一个字符串，表示到目前为止在游戏中放置的片段的顺序
-     *      * @param piece             a four-character String representing the tile just drawn
-     *      * @参数  piece             一个四个字符的字符串，表示刚刚抽取的图块
-     *      * @param hand              A tile in the player's hand, which they can choose to play instead of the drawn tile.
-     *      * @参数  hand              玩家手中的一个图块，玩家可以选择用它来代替抽取的图块。
-     *      *                          If the player does not currently hold a tile, this parameter will be null.
-     *      * @param numberOfPlayers   The number of players in the game
-     *      * @参数  numberOfPlayers   游戏中的player的数量
-     *      * @return A valid placement of other the drawn tile or the tile from the player's hand (if it is not empty).
-     *      * @return 抽取的图块或者玩家手里的土块的有效的放置（如果不是空的话）。
+     *
+     * @参数  placementSequence 一个字符串，表示到目前为止在游戏中放置的片段的顺序
+     * @参数  piece             一个四个字符的字符串，表示刚刚抽取的图块
+     * @参数  hand              玩家手中的一个图块，玩家可以选择用它来代替抽取的图块。
+     * @参数  numberOfPlayers   游戏中的player的数量
+     * @return 抽取的图块或者玩家手里的土块的有效的放置（如果不是空的话）。
      */
     public static String generateMove(String placementSequence, String piece, String hand, int numberOfPlayers) {
         // FIXME Task 9: generate a valid move
