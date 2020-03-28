@@ -38,9 +38,9 @@ public class Metro {
      *
      * @param placement A String representing the placement of all tiles on the
      *                  board
-     *  @参数 placement 一个string代表表示板上所有图块位置的字符串
+     * @参数 placement 一个string代表表示板上所有图块位置的字符串
      * @return true if this placement sequence is well-formed
-     *  @return true如果这个placement sequence 是well-formed。
+     * @return true如果这个placement sequence 是well-formed。
      */
     public static boolean isPlacementSequenceWellFormed(String placement) {
         // FIXME Task 3: determine whether a placement sequence is well-formed
@@ -50,12 +50,16 @@ public class Metro {
     /**
      * Task 5
      * Draw a random tile from the deck.
+     * 从deck上随机抽取一个图块
      *
      * @param placementSequence a String representing the sequence of tiles
      *                          that have already been played
+     * @参数 placementSequence一个string 代表着 已经玩过的图块序列
      * @param totalHands        a String representing all tiles (if any) in
      *                          all players' hands
+     * @参数 totalHands    一个string代表在所有玩家手中的所有图块
      * @return a random tile from the deck
+     * @return deck上的一个图块
      */
     public static String drawFromDeck(String placementSequence, String totalHands) {
         // FIXME Task 5: draw a random tile from the deck
@@ -65,36 +69,32 @@ public class Metro {
     /**
      * Task 6
      * Determine if a given placement sequence follows the rules of the game.
+     * 给定的放置顺序是否遵循游戏规则。
      * These rules are:
+     * 规则是
      * - No tile can overlap another tile, or any of the central stations.
+     * 任何一块都不能与另一块或任何中心工作站重叠
      * - A tile cannot be placed next to one of the central squares unless it
      * continues or completes an existing track.
+     * 一个图块不能在一个中心广场旁边被放置 除非它要继续或者完成一个已经存在的track
      * - If a tile is on an edge of the board, it cannot contain a track that
      * results in a station looping back to itself, UNLESS that tile could not
      * have been placed elsewhere.
+     * 如果一个图块在棋盘板子的边缘，除非不可避免，否则它不能包含导致站循环回到自身的轨道。
      * - If a tile is on a corner of the board, it cannot contain a track that
      * links the two stations adjacent to that corner, UNLESS that tile could
      * not have been placed elsewhere.
+     * 如果图块在棋盘板子的一个角上，除非不可避免，否则它不能包含连接该角附近两个站的轨道。
      *
      * @param placementSequence A sequence of placements on the board.
+     * @参数 placementSequence 在棋盘上的放置序列
      * @return Whether this placement string is valid.
-     *  * Determine if a given placement sequence follows the rules of the game.
-     *      *确定给定的放置顺序是否遵循游戏规则。
-     *      * These rules are:这些规则是
-     *      * - All tracks on all placed pieces must eventually arrive at a station.
-     *      * 所有已铺设的轨道必须最终到达车站。
-     *      * - No piece can overlap another piece, or any of the central stations.
-     *      *任何一块都不能与另一块或任何中心工作站重叠
-     *      * - If a piece is on an edge of the board, it cannot contain a track that
-     *      * results in a station looping back to itself, UNLESS it is unavoidable.
-     *      * 如果一个图块在棋盘板子的边缘，除非不可避免，否则它不能包含导致站循环回到自身的轨道。
-     *      * - If a piece is on a corner of the board, it cannot contain a track that
-     *      * links the two stations adjacent to that corner, UNLESS it is
-     *      * unavoidable.
-     *      * 如果图块在棋盘板子的一个角上，除非不可避免，否则它不能包含连接该角附近两个站的轨道。
-     *      *
-     *      * @param placementSequence A sequence of placements on the board.@参数 placementSequence 在棋盘上的放置序列
-     *      * @return Whether this placement string is valid.@return 这个放置string是否是有效的
+     * @return 这个放置string是否是有效的
+     *
+
+     *
+     *
+     *
      */
     public static boolean isPlacementSequenceValid(String placementSequence) {
         // FIXME Task 6: determine whether a placement sequence is valid

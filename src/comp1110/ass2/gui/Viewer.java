@@ -17,7 +17,8 @@ import javafx.stage.Stage;
  * <p>
  * NOTE: This class is separate from your main game class.  This
  * class does not play a game, it just illustrates various piece
- * placements.这个类是从你主要的game类分开的。这个类不是play a game，它只是说明了不同的图块的放置。
+ * placements.
+ * 这个类是从你主要的game类分开的。这个类不是play a game，它只是说明了不同的图块的放置。
  */
 public class Viewer extends Application {
     /* board layout */
