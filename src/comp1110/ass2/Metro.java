@@ -80,11 +80,11 @@ public class Metro {
      * - If a tile is on an edge of the board, it cannot contain a track that
      * results in a station looping back to itself, UNLESS that tile could not
      * have been placed elsewhere.
-     * 如果一个图块在棋盘板子的边缘，除非不可避免，否则它不能包含导致站循环回到自身的轨道。
+     * 如果一个图块在棋盘板子的边缘，除非它没有其他地方放置，否则它不能包含导致站循环回到自身的轨道。
      * - If a tile is on a corner of the board, it cannot contain a track that
      * links the two stations adjacent to that corner, UNLESS that tile could
      * not have been placed elsewhere.
-     * 如果图块在棋盘板子的一个角上，除非不可避免，否则它不能包含连接该角附近两个站的轨道。
+     * 如果图块在棋盘板子的一个角上，除非它没有其他地方放置，否则它不能包含连接该角附近两个站的轨道。
      *
      * @param placementSequence A sequence of placements on the board.
      * @参数 placementSequence 在棋盘上的放置序列
