@@ -15,11 +15,11 @@ public class Metro {
      * * 包括六个character
      * * 首字母、第二字母、第三字母和第四字母在“a”和“d”之间（包括track）；
      * * 第五和第六个字符的数字介于0和7之间（包括*）（分别为列和行）。
-     * @param piecePlacement A String representing the piece to be placed
-     * @return True if this string is well-formed
+     * @param piecePlacement A String representing the piece to be placed表示要放置的字符串
+     * @return True if this string is well-formed如果这个string是well-formed
      */
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
-        // FIXME Task 2: determine whether a piece placement is well-formed
+        // FIXME Task 2: determine whether a piece placement is well-formed判断一个图块的放置是不是well-formed
         return false;
     }
 
