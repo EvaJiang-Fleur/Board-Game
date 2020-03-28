@@ -26,11 +26,15 @@ public class Metro {
     /**
      * Task 3
      * Determine whether a placement sequence string is well-formed.
+     * 判断一个placement sequence string是否是well formed
      * For a placement sequence to be well-formed, it must satisfy the
      * following criteria:
+     * 对于一个well formed的placement sequence，它必须满足以下条件：
      * - It must be composed of well-formed tile placements.
+     * 它必须由well-formed的图块放置组成。
      * - For any piece x, there can exist no more instances of x on the board
      * than instances of x in the deck.
+     * 对于任何图块x，板上的x实例不能多于deck上的x实例。???
      *
      * @param placement A String representing the placement of all tiles on the
      *                  board
