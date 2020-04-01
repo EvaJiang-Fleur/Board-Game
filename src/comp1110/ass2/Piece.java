@@ -1,7 +1,7 @@
 package comp1110.ass2;
 
 public class Piece {
-    //this class is used to place the pieces into the board
+    //this class is used to place the pieces into the board(which indicated by the corresponding coordinates)
     //the string of the tiles corresponding the type of each tiles and placed them into the right corresponding coordinate
     private String tile;
     private int x;
