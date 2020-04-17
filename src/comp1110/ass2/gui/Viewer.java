@@ -10,6 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+
 
 /**
  * A very simple viewer for piece placements in the Metro game.
@@ -32,6 +36,8 @@ public class Viewer extends Application {
     private final Group controls = new Group();
     private TextField textField;
 
+
+
     /**
      * Draw a placement in the window, removing any previously drawn one
 
@@ -40,6 +46,9 @@ public class Viewer extends Application {
      */
     void makePlacement(String placement) {
         // FIXME Task 4: implement the simple placement viewer
+
+
+
     }
 
     /**
@@ -77,4 +86,10 @@ public class Viewer extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }
+

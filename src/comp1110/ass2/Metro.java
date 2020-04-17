@@ -21,11 +21,11 @@ public class Metro {
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
         if (piecePlacement == null || piecePlacement.length() != 6) {
             return false;
-        } else if (piecePlacement.charAt(0) < 'a' || piecePlacement.charAt(0) > 'd'
+            } else if (piecePlacement.charAt(0) < 'a' || piecePlacement.charAt(0) > 'd'
                 ||piecePlacement.charAt(1) < 'a' || piecePlacement.charAt(1) > 'd'
                 ||piecePlacement.charAt(2) < 'a' || piecePlacement.charAt(2) > 'd'
                 ||piecePlacement.charAt(3) < 'a' || piecePlacement.charAt(3) > 'd'
-                ||piecePlacement.charAt(4) < '0' || piecePlacement.charAt(4) > '7'
+               ||piecePlacement.charAt(4) < '0' || piecePlacement.charAt(4) > '7'
                 ||piecePlacement.charAt(5) < '0' || piecePlacement.charAt(5) > '7'
                 ||((piecePlacement.charAt(4) == '3' ||piecePlacement.charAt(4) == '4')
                 &&(piecePlacement.charAt(5) == '3' ||piecePlacement.charAt(5) == '4'))
@@ -33,7 +33,18 @@ public class Metro {
         else  { return true;}
 
         // FIXME Task 2: determine whether a piece placement is well-formed判断一个图块的放置是不是well-formed
-
+//        if(piecePlacement.length() == 6&& piecePlacement== piecePlacement.toLowerCase() ){
+//            if((piecePlacement.charAt(0) >= 'a' && piecePlacement.charAt(0) <= 'd')&&
+//            (piecePlacement.charAt(1) >= 'a' && piecePlacement.charAt(1) <= 'd') &&
+//            (piecePlacement.charAt(2) >= 'a' && piecePlacement.charAt(2) <= 'd')&&
+//            (piecePlacement.charAt(3) >= 'a' && piecePlacement.charAt(3) <= 'd')&&
+//            (piecePlacement.charAt(4) >= '0' && piecePlacement.charAt(4) <= '7')&&
+//            (piecePlacement.charAt(5) >= '0' && piecePlacement.charAt(5) <= '7')&&
+//            ((piecePlacement.charAt(4) != '3' &&piecePlacement.charAt(4) != '4')||
+//            (piecePlacement.charAt(5) != '3' &&piecePlacement.charAt(5) != '4'))
+//            )return true;
+//        }
+//        return false;
     }
 
     /**
