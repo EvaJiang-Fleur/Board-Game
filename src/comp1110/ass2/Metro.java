@@ -21,7 +21,7 @@ public class Metro {
      * @return True if this string is well-formed如果这个string是well-formed
      */
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
-        if (piecePlacement == null || piecePlacement.length() != 6) {
+        if ( piecePlacement.length() != 6) {
             return false;
             } else if (piecePlacement.charAt(0) < 'a' || piecePlacement.charAt(0) > 'd'
                 ||piecePlacement.charAt(1) < 'a' || piecePlacement.charAt(1) > 'd'
