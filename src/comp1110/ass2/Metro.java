@@ -80,7 +80,6 @@ public class Metro {
         int bbad=0;int ddbc=0;int cddb=0;int bcdd=0;int dbcd=0;int adad=0;int dada=0;int dddd=0;
         for (int i = 0; i < placement.length(); i +=6 ) {
             String nextone = placement.substring(i, i + 6);
-//            int puz = placement.indexOf(nextone.substring(0,3))+4;
             if (!isPiecePlacementWellFormed(nextone)) {
                 return false;
             }
@@ -109,9 +108,6 @@ public class Metro {
             if (nextone.contains("ddbc"))ddbc++;
             if (nextone.contains("dddd"))dddd++;
         }
-//        aacb, cbaa, acba, baac, and aaaa
-//        cbcb and bcbc
-//        cccc, bbbb, dacc, cdac, ccda, accd, dbba, adbb, badb, bbad, ddbc, cddb, bcdd, dbcd, adad, dada and dddd.
         if (aacb>4 || cbaa>4 || acba>4 || baac>4 || aaaa>4 ||
         cbcb>3 || bcbc>3 ||
         cccc>2 || bbbb>2 || dacc>2 || cdac>2 || ccda>2 || accd>2 || dbba>2 || adbb>2 || badb>2 || bbad>2 ||
