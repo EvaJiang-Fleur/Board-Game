@@ -1,5 +1,7 @@
 package comp1110.ass2;
 
+import java.util.Scanner;
+
 public class Metro {
     /**
      * Task 2
@@ -68,7 +70,53 @@ public class Metro {
      */
     public static boolean isPlacementSequenceWellFormed(String placement) {
         // FIXME Task 3: determine whether a placement sequence is well-formed
-        return false;
+        if (placement.isEmpty())return true;
+        if (placement.length() % 6 != 0) {
+            return false;
+        }
+        int aacb=0;int cbaa=0;int acba=0;int baac=0;int aaaa=0;
+        int cbcb=0; int bcbc=0;
+        int cccc=0;int bbbb=0;int dacc=0;int cdac=0;int ccda=0;int accd=0;int dbba=0;int adbb=0;int badb=0;
+        int bbad=0;int ddbc=0;int cddb=0;int bcdd=0;int dbcd=0;int adad=0;int dada=0;int dddd=0;
+        for (int i = 0; i < placement.length(); i +=6 ) {
+            String nextone = placement.substring(i, i + 6);
+//            int puz = placement.indexOf(nextone.substring(0,3))+4;
+            if (!isPiecePlacementWellFormed(nextone)) {
+                return false;
+            }
+            if (nextone.contains("aaaa"))aaaa++;
+            if (nextone.contains("aacb"))aacb++;
+            if (nextone.contains("acba"))acba++;
+            if (nextone.contains("accd"))accd++;
+            if (nextone.contains("adad"))adad++;
+            if (nextone.contains("adbb"))adbb++;
+            if (nextone.contains("baac"))baac++;
+            if (nextone.contains("badb"))badb++;
+            if (nextone.contains("bbad"))bbad++;
+            if (nextone.contains("bbbb"))bbbb++;
+            if (nextone.contains("bcbc"))bcbc++;
+            if (nextone.contains("bcdd"))bcdd++;
+            if (nextone.contains("cbaa"))cbaa++;
+            if (nextone.contains("cbcb"))cbcb++;
+            if (nextone.contains("cccc"))cccc++;
+            if (nextone.contains("ccda"))ccda++;
+            if (nextone.contains("cdac"))cdac++;
+            if (nextone.contains("cddb"))cddb++;
+            if (nextone.contains("dacc"))dacc++;
+            if (nextone.contains("dada"))dada++;
+            if (nextone.contains("dbba"))dbba++;
+            if (nextone.contains("dbcd"))dbcd++;
+            if (nextone.contains("ddbc"))ddbc++;
+            if (nextone.contains("dddd"))dddd++;
+        }
+//        aacb, cbaa, acba, baac, and aaaa
+//        cbcb and bcbc
+//        cccc, bbbb, dacc, cdac, ccda, accd, dbba, adbb, badb, bbad, ddbc, cddb, bcdd, dbcd, adad, dada and dddd.
+        if (aacb>4 || cbaa>4 || acba>4 || baac>4 || aaaa>4 ||
+        cbcb>3 || bcbc>3 ||
+        cccc>2 || bbbb>2 || dacc>2 || cdac>2 || ccda>2 || accd>2 || dbba>2 || adbb>2 || badb>2 || bbad>2 ||
+        ddbc>2 || cddb>2 || bcdd>2 || dbcd>2 || adad>2 || dada>2 || dddd>2){return false;}
+        return true;
     }
 
     /**
