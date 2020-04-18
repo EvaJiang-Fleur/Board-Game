@@ -131,6 +131,88 @@ public class Metro {
      */
     public static String drawFromDeck(String placementSequence, String totalHands) {
         // FIXME Task 5: draw a random tile from the deck
+        int aacb=4;int cbaa=4;int acba=4;int baac=4;int aaaa=4;
+        int cbcb=3; int bcbc=3;
+        int cccc=2;int bbbb=2;int dacc=2;int cdac=2;int ccda=2;int accd=2;int dbba=2;int adbb=2;int badb=2;
+        int bbad=2;int ddbc=2;int cddb=2;int bcdd=2;int dbcd=2;int adad=2;int dada=2;int dddd=2;
+        for (int i = 0; i < placementSequence.length(); i +=6 ) {
+            String nextone = placementSequence.substring(i, i + 6);
+            if (nextone.contains("aaaa"))aaaa--;
+            if (nextone.contains("aacb"))aacb--;
+            if (nextone.contains("acba"))acba--;
+            if (nextone.contains("accd"))accd--;
+            if (nextone.contains("adad"))adad--;
+            if (nextone.contains("adbb"))adbb--;
+            if (nextone.contains("baac"))baac--;
+            if (nextone.contains("badb"))badb--;
+            if (nextone.contains("bbad"))bbad--;
+            if (nextone.contains("bbbb"))bbbb--;
+            if (nextone.contains("bcbc"))bcbc--;
+            if (nextone.contains("bcdd"))bcdd--;
+            if (nextone.contains("cbaa"))cbaa--;
+            if (nextone.contains("cbcb"))cbcb--;
+            if (nextone.contains("cccc"))cccc--;
+            if (nextone.contains("ccda"))ccda--;
+            if (nextone.contains("cdac"))cdac--;
+            if (nextone.contains("cddb"))cddb--;
+            if (nextone.contains("dacc"))dacc--;
+            if (nextone.contains("dada"))dada--;
+            if (nextone.contains("dbba"))dbba--;
+            if (nextone.contains("dbcd"))dbcd--;
+            if (nextone.contains("ddbc"))ddbc--;
+            if (nextone.contains("dddd"))dddd--;
+        }
+        for (int i = 0; i < totalHands.length(); i +=4 ) {
+            String nextone = totalHands.substring(i, i + 4);
+            if (nextone.contains("aaaa"))aaaa--;
+            if (nextone.contains("aacb"))aacb--;
+            if (nextone.contains("acba"))acba--;
+            if (nextone.contains("accd"))accd--;
+            if (nextone.contains("adad"))adad--;
+            if (nextone.contains("adbb"))adbb--;
+            if (nextone.contains("baac"))baac--;
+            if (nextone.contains("badb"))badb--;
+            if (nextone.contains("bbad"))bbad--;
+            if (nextone.contains("bbbb"))bbbb--;
+            if (nextone.contains("bcbc"))bcbc--;
+            if (nextone.contains("bcdd"))bcdd--;
+            if (nextone.contains("cbaa"))cbaa--;
+            if (nextone.contains("cbcb"))cbcb--;
+            if (nextone.contains("cccc"))cccc--;
+            if (nextone.contains("ccda"))ccda--;
+            if (nextone.contains("cdac"))cdac--;
+            if (nextone.contains("cddb"))cddb--;
+            if (nextone.contains("dacc"))dacc--;
+            if (nextone.contains("dada"))dada--;
+            if (nextone.contains("dbba"))dbba--;
+            if (nextone.contains("dbcd"))dbcd--;
+            if (nextone.contains("ddbc"))ddbc--;
+            if (nextone.contains("dddd"))dddd--;
+        }
+        if (aaaa!=0)return "aaaa";
+        if (aacb!=0)return "aacb";
+        if (acba!=0)return "acba";
+        if (accd!=0)return "accd";
+        if (adad!=0)return "adad";
+        if (adbb!=0)return "adbb";
+        if (baac!=0)return "baac";
+        if (badb!=0)return "badb";
+        if (bbad!=0)return "bbad";
+        if (bbbb!=0)return "bbbb";
+        if (bcbc!=0)return "bcbc";
+        if (bcdd!=0)return "bcdd";
+        if (cbaa!=0)return "cbaa";
+        if (cbcb!=0)return "cbcb";
+        if (cccc!=0)return "cccc";
+        if (ccda!=0)return "ccda";
+        if (cdac!=0)return "cdac";
+        if (cddb!=0)return "cddb";
+        if (dacc!=0)return "dacc";
+        if (dada!=0)return "dada";
+        if (dbba!=0)return "dbba";
+        if (dbcd!=0)return "dbcd";
+        if (ddbc!=0)return "ddbc";
+        if (dddd!=0)return "dddd";
         return "";
     }
 
