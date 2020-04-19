@@ -1008,7 +1008,7 @@ public class Metro {
     }
 
     private static void putData(String placementSequence, Map[][] desk) {
-//        
+//
 //          1 2
 //         8   3
 //         7   4
