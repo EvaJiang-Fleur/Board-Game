@@ -28,6 +28,7 @@ public class Metro {
         return true;
     }
 
+
     /**
      * Task 3
      * Determine whether a placement sequence string is well-formed.
