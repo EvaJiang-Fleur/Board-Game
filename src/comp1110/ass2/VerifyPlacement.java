@@ -15,7 +15,7 @@ public class VerifyPlacement {
     }
 
     public static boolean isPlacementSequenceValid(String placementSequence) {
-   
+
         return false;
     }
 }
