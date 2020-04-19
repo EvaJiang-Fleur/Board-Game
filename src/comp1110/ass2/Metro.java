@@ -84,55 +84,7 @@ public class Metro {
     public static String drawFromDeck(String placementSequence, String totalHands) {
         // FIXME Task 5: draw a random tile from the deck
 
-        Map<String, Integer> counts = getDeckMap();
-        for (int i = 0; i < placementSequence.length(); i += 6) {
-            String key = placementSequence.substring(i, i + 4);
-            counts.put(key, counts.get(key) - 1);
-        }
-        for (int i = 0; i < totalHands.length(); i += 4) {
-            String key = totalHands.substring(i, i + 4);
-            counts.put(key, counts.get(key) - 1);
-        }
-        List<String> randomList = new ArrayList<>();
-        for (String key : counts.keySet()) {
-            if (counts.get(key) > 0) {
-                randomList.add(key);
-            }
-        }
-        return randomList.get(new Random().nextInt(randomList.size()));
-    }
-
-    private static Map<String, Integer> getDeckMap() {
-        Map<String, Integer> counts = new HashMap<>();
-        counts.put("aacb", 4);
-        counts.put("cbaa", 4);
-        counts.put("acba", 4);
-        counts.put("baac", 4);
-        counts.put("aaaa", 4);
-
-        counts.put("cbcb", 3);
-        counts.put("bcbc", 3);
-
-        counts.put("cccc", 2);
-        counts.put("bbbb", 2);
-        counts.put("dacc", 2);
-        counts.put("cdac", 2);
-        counts.put("ccda", 2);
-        counts.put("accd", 2);
-        counts.put("dbba", 2);
-        counts.put("adbb", 2);
-        counts.put("badb", 2);
-        counts.put("bbad", 2);
-        counts.put("ddbc", 2);
-        counts.put("cddb", 2);
-        counts.put("bcdd", 2);
-        counts.put("dbcd", 2);
-        counts.put("adad", 2);
-        counts.put("dada", 2);
-        counts.put("dddd", 2);
-        return counts;
-    }
-
+  
 
     /**
      * Task 6
