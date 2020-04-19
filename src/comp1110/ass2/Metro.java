@@ -62,7 +62,7 @@ public class Metro {
                 return false;
             }
             String key = placement.substring(i, i + 4);
-            if ((counts.put(key, counts.get(key) - 1)) == -1) {
+            if ((counts.put(key, counts.get(key) - 1)) == 0) {
                 return false;
             }
         }
