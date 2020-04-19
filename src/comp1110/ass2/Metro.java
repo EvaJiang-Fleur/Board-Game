@@ -17,6 +17,7 @@ public class Metro {
      *
      * @param piecePlacement A String representing the piece to be placed
      * @return True if this string is well-formed
+     *  @author Ruiqiao Jiang
      */
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
 
@@ -38,7 +39,7 @@ public class Metro {
      * <p>
      * - For any piece x, there can exist no more instances of x on the board
      * than instances of x in the deck.
-     *
+     *  @author Ruiqiao Jiang
      * @param placement A String representing the placement of all tiles on the
      * @return true if this placement sequence is well-formed
      */
