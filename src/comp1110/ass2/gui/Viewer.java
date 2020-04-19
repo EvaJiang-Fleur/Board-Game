@@ -76,10 +76,11 @@ public class Viewer extends Application {
 
     /**
      * Draw a placement in the window, removing any previously drawn one
-     *
+     * @author Yvonne(Xinyi) Zhang
      * @param placement A valid placement string
      */
     void makePlacement(String placement) {
+        // FIXME Task 4: implement the simple placement viewer
         String[] tileArray = toTiles(placement);
         for (int i = 0; i < tileArray.length; i++){
             TileImage thisTile = new TileImage(tileArray[i]);
