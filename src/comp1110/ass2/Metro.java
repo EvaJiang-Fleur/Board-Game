@@ -1045,6 +1045,7 @@ public class Metro {
      *                          If the player does not currently hold a tile, this parameter will be null.
      * @param numberOfPlayers   The number of players in the game
      * @return A valid placement of other the drawn tile or the tile from the player's hand (if it is not empty).
+     * @author:Ruiqiao Jiang
      */
     public static String generateMove(String placementSequence, String piece, String hand, int numberOfPlayers) {
         // FIXME Task 9: generate a valid move
