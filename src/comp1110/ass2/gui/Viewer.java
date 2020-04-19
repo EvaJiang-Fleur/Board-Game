@@ -5,13 +5,17 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
@@ -79,6 +83,14 @@ public class Viewer extends Application {
             setLayoutX(x);
             setLayoutY(y);
             this.setRotate(rotate);
+        }
+    }
+
+    class PieceImage extends ImageView {
+        PieceImage(double x, double y, String piece) {
+            setImage(new Image(Viewer.class.getResource(URI_BASE + piece+".jpg").toString(),SQUARE_SIZE,SQUARE_SIZE,true,true));
+            setLayoutX(x);
+            setLayoutY(y);
         }
     }
 
@@ -163,8 +175,38 @@ public class Viewer extends Application {
         board.getChildren().add(metro3);
         MetroImage metro4 = new MetroImage(700,550,0);
         board.getChildren().add(metro4);
+
+        Pane node = generateNode("aaaa");
+        node.relocate(800, 110);
+        draggable(node);
+        root.getChildren().addAll(node);
+    }
+    private Pane generateNode(String piece) {
+        Pane node = new StackPane();
+        PieceImage piece1 =new PieceImage(800,110,"aaaa");
+        node.getChildren().addAll(piece1);
+        return node;
     }
 
+    private static class Position {
+        double x;
+        double y;
+    }
+    private void draggable(Node node) {
+        final Position pos = new Position();
+        node.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            pos.x = event.getX();
+            pos.y = event.getY();
+        });
+        node.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
+            double x = node.getLayoutX()+ event.getX() - pos.x;
+            double y = node.getLayoutY()+ event.getY() - pos.y;
+            if (x>220&x<700&&y>70&&y<550)
+            {x=((int)(x-160)/60)*60+160;
+            y=((int)(y-10)/60)*60+10;}
+            node.relocate(x, y);
+        });
+    }
     /**
      * Create a basic text field for input and a refresh button.
      */
