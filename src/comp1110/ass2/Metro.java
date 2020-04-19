@@ -174,7 +174,7 @@ public class Metro {
                 String threeDirection = placementSequence.substring(i + 2, i + 3);
                 String fourDirection = placementSequence.substring(i + 3, i + 4);
 
-                // 中央车站判断
+                // judge if it is the centre station
                 if (Arrays.asList(new String[]{"33", "34", "43", "44"}).contains(position)) {
                     return false;
                 } else if (rowNumber == 0 || rowNumber == 7 || colNumber == 0 || colNumber == 7) {
