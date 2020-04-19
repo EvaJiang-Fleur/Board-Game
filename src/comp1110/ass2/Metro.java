@@ -151,7 +151,7 @@ public class Metro {
      * - If a tile is on a corner of the board, it cannot contain a track that
      * links the two stations adjacent to that corner, UNLESS that tile could
      * not have been placed elsewhere.
-     *
+     *author Ruiqiao Jiang
      * @param placementSequence A sequence of placements on the board.
      * @return Whether this placement string is valid.
      */
