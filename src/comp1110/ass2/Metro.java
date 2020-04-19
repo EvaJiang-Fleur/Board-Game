@@ -46,28 +46,7 @@ public class Metro {
      */
     public static boolean isPlacementSequenceWellFormed(String placement) {
         // FIXME Task 3: determine whether a placement sequence is well-formed
-        Map<String, Integer> counts = getDeckMap();
-        List<Integer> positions = new ArrayList<>();
-        for (int i = 0; i < placement.length(); i += 6) {
-            if (placement.substring(i).length() < 6) {
-                return false;
-            }
-            if (!isPiecePlacementWellFormed(placement.substring(i, i + 6))) {
-                return false;
-            }
-            int posistion = Integer.parseInt(placement.substring(i + 4, i + 6));
-            if (!positions.contains(posistion)) {
-                positions.add(posistion);
-            } else {
-                return false;
-            }
-            String key = placement.substring(i, i + 4);
-            if ((counts.put(key, counts.get(key) - 1)) == -1) {
-                return false;
-            }
-        }
-        return true;
-    }
+        
 
 
     /**
