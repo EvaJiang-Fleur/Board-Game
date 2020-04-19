@@ -1050,7 +1050,6 @@ public class Metro {
         putData(placementSequence, desk);
         int[] twoPlayers1 = new int[]{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30};
         int[] twoPlayers2 = new int[]{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31};
-
         int[] threePlayers1 = new int[]{0, 3, 5, 10, 14, 19, 22, 24, 27, 30};
         int[] threePlayers2 = new int[]{1, 6, 8, 11, 13, 18, 21, 26, 28, 31};
         int[] threePlayers3 = new int[]{2, 4, 7, 9, 12, 17, 20, 23, 25, 29};
