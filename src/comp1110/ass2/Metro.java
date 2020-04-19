@@ -79,6 +79,7 @@ public class Metro {
      * @param totalHands        a String representing all tiles (if any) in
      *                          all players' hands
      * @return a random tile from the deck
+     * @author Ruiqiao Jiang
      */
     public static String drawFromDeck(String placementSequence, String totalHands) {
         // FIXME Task 5: draw a random tile from the deck
