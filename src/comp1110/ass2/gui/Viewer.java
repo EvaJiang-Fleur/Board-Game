@@ -1,5 +1,6 @@
 package comp1110.ass2.gui;
 
+import comp1110.ass2.Metro;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -72,6 +73,15 @@ public class Viewer extends Application {
         }
     }
 
+    class MetroImage extends ImageView {
+        MetroImage(double x, double y, int rotate) {
+            setImage(new Image(Viewer.class.getResource(URI_BASE + "tile_back_cover"+".jpg").toString(),SQUARE_SIZE,SQUARE_SIZE,true,true));
+            setLayoutX(x);
+            setLayoutY(y);
+            this.setRotate(rotate);
+        }
+    }
+
 
 
     /**
@@ -91,6 +101,7 @@ public class Viewer extends Application {
 
 
     private String[] toTiles(String placement){
+        if (!Metro.isPlacementSequenceValid(placement)) return null;
         int count = placement.length() / 6;
         String[] tiles = new String[count];
         for(int i =0;i<count;i++){
@@ -143,6 +154,15 @@ public class Viewer extends Application {
         board.getChildren().add(centreStation3);
         CentreStationImage centreStation4 = new CentreStationImage(460,310,90);
         board.getChildren().add(centreStation4);
+
+        MetroImage metro1 = new MetroImage(160,10,0);
+        board.getChildren().add(metro1);
+        MetroImage metro2 = new MetroImage(160,550,0);
+        board.getChildren().add(metro2);
+        MetroImage metro3 = new MetroImage(700,10,0);
+        board.getChildren().add(metro3);
+        MetroImage metro4 = new MetroImage(700,550,0);
+        board.getChildren().add(metro4);
     }
 
     /**
