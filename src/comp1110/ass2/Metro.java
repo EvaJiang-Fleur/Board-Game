@@ -158,7 +158,93 @@ public class Metro {
      */
     public static boolean isPlacementSequenceValid(String placementSequence) {
         // FIXME Task 6: determine whether a placement sequence is valid
-       
+        if (!isPlacementSequenceWellFormed(placementSequence)) {
+            return false;
+        }
+
+        Set alreadyPositions = new HashSet();
+        for (int i = 0; i < placementSequence.length(); i += 6) {
+            String position = placementSequence.substring(i + 4, i + 6);
+            String direction = placementSequence.substring(i, i + 4);
+            // Condition Duplication
+            if (alreadyPositions.contains(position)) {
+                return false;
+            } else {
+                int rowNumber = Integer.parseInt(placementSequence.substring(i + 4, i + 5));
+                int colNumber = Integer.parseInt(placementSequence.substring(i + 5, i + 6));
+                String oneDirection = placementSequence.substring(i, i + 1);
+                String twoDirection = placementSequence.substring(i + 1, i + 2);
+                String threeDirection = placementSequence.substring(i + 2, i + 3);
+                String fourDirection = placementSequence.substring(i + 3, i + 4);
+
+                // judge if it is the centre station
+                if (Arrays.asList(new String[]{"33", "34", "43", "44"}).contains(position)) {
+                    return false;
+                } else if (rowNumber == 0 || rowNumber == 7 || colNumber == 0 || colNumber == 7) {
+
+                    if (direction.equals("dddd") && alreadyPositions.size() == 0) {
+                        alreadyPositions.add(position);
+                        continue;
+                    }
+                    if (rowNumber == 0 && colNumber != 0 && colNumber != 7) {
+                        if (oneDirection.equals("d")) {
+                            return false;
+                        }
+                    } else if (rowNumber == 7 && colNumber != 0 && colNumber != 7) {
+                        if (threeDirection.equals("d")) {
+                            return false;
+                        }
+                    } else if (colNumber == 0 && rowNumber != 0 && rowNumber != 7) {
+                        if (fourDirection.equals("d")) {
+                            return false;
+                        }
+                    } else if (colNumber == 7 && rowNumber != 0 && rowNumber != 7) {
+                        if (twoDirection.equals("d")) {
+                            return false;
+                        }
+                    }
+                    if (rowNumber == 7 && colNumber == 7) {
+                        if (twoDirection.equals("d") && threeDirection.equals("d")) {
+                            return false;
+                        }
+                    }
+                    if (rowNumber == 0 && colNumber == 0) {
+                        if (oneDirection.equals("d") && fourDirection.equals("d")) {
+                            return false;
+                        }
+                    }
+                    if (rowNumber == 7 && colNumber == 0) {
+                        if (threeDirection.equals("d") && fourDirection.equals("d")) {
+                            return false;
+                        }
+                    }
+                    if (rowNumber == 0 && colNumber == 7) {
+                        if (oneDirection.equals("d") && twoDirection.equals("d")) {
+                            return false;
+                        }
+                    }
+
+                    alreadyPositions.add(position);
+                } else {
+                    boolean flag = false;
+                    if ((rowNumber - 1) != -1 && alreadyPositions.contains((rowNumber - 1) + "" + colNumber)) {
+                        flag = true;
+                    } else if ((rowNumber + 1) != 8 && alreadyPositions.contains((rowNumber + 1) + "" + colNumber)) {
+                        flag = true;
+                    } else if ((colNumber - 1) != -1 && alreadyPositions.contains(rowNumber + "" + (colNumber - 1))) {
+                        flag = true;
+                    } else if ((colNumber + 1) != 8 && alreadyPositions.contains(rowNumber + "" + (colNumber + 1))) {
+                        flag = true;
+                    }
+                    if (!flag) {
+                        return false;
+                    }
+                    alreadyPositions.add(position);
+                }
+            }
+        }
+        return true;
+    }
 
     /**
      * Task 7
