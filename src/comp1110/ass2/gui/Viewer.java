@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  */
 public class Viewer extends Application {
     /* board layout */
-    private static final int SQUARE_SIZE = 70;
+    private static final int SQUARE_SIZE = 60;
     private static final int VIEWER_WIDTH = 1024;
     private static final int VIEWER_HEIGHT = 768;
     private static int X_OF_CORNER = 220;
@@ -135,13 +135,13 @@ public class Viewer extends Application {
             board.getChildren().add(station);
         }
 
-        CentreStationImage centreStation1 = new CentreStationImage(430,280,270);
+        CentreStationImage centreStation1 = new CentreStationImage(400,250,270);
         board.getChildren().add(centreStation1);
-        CentreStationImage centreStation2 = new CentreStationImage(430,350,180);
+        CentreStationImage centreStation2 = new CentreStationImage(400,310,180);
         board.getChildren().add(centreStation2);
-        CentreStationImage centreStation3 = new CentreStationImage(500,280,0);
+        CentreStationImage centreStation3 = new CentreStationImage(460,250,0);
         board.getChildren().add(centreStation3);
-        CentreStationImage centreStation4 = new CentreStationImage(500,350,90);
+        CentreStationImage centreStation4 = new CentreStationImage(460,310,90);
         board.getChildren().add(centreStation4);
     }
 
@@ -165,7 +165,7 @@ public class Viewer extends Application {
         hb.getChildren().addAll(label1, textField, button);
         hb.setSpacing(10);
         hb.setLayoutX(130);
-        hb.setLayoutY(VIEWER_HEIGHT - 50);
+        hb.setLayoutY(VIEWER_HEIGHT - 100);
         controls.getChildren().add(hb);
     }
 
@@ -183,6 +183,7 @@ public class Viewer extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public static void main(String[] args){
         launch(args);
     }
