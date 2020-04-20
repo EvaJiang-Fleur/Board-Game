@@ -17,6 +17,7 @@ public class Metro {
      *
      * @param piecePlacement A String representing the piece to be placed
      * @return True if this string is well-formed
+     *  @author Ruiqiao Jiang
      */
     public static boolean isPiecePlacementWellFormed(String piecePlacement) {
 
@@ -26,6 +27,7 @@ public class Metro {
             return false;
         return true;
     }
+
 
     /**
      * Task 3
@@ -38,7 +40,7 @@ public class Metro {
      * <p>
      * - For any piece x, there can exist no more instances of x on the board
      * than instances of x in the deck.
-     *
+     *  @author Ruiqiao Jiang
      * @param placement A String representing the placement of all tiles on the
      * @return true if this placement sequence is well-formed
      */
@@ -60,12 +62,13 @@ public class Metro {
                 return false;
             }
             String key = placement.substring(i, i + 4);
-            if ((counts.put(key, counts.get(key) - 1)) == -1) {
+            if ((counts.put(key, counts.get(key) - 1)) == 0) {
                 return false;
             }
         }
         return true;
     }
+
 
     /**
      * Task 5
@@ -76,10 +79,10 @@ public class Metro {
      * @param totalHands        a String representing all tiles (if any) in
      *                          all players' hands
      * @return a random tile from the deck
+     * @author Ruiqiao Jiang
      */
     public static String drawFromDeck(String placementSequence, String totalHands) {
         // FIXME Task 5: draw a random tile from the deck
-
         Map<String, Integer> counts = getDeckMap();
         for (int i = 0; i < placementSequence.length(); i += 6) {
             String key = placementSequence.substring(i, i + 4);
@@ -130,6 +133,7 @@ public class Metro {
     }
 
 
+
     /**
      * Task 6
      * Determine if a given placement sequence follows the rules of the game.
@@ -148,7 +152,7 @@ public class Metro {
      * - If a tile is on a corner of the board, it cannot contain a track that
      * links the two stations adjacent to that corner, UNLESS that tile could
      * not have been placed elsewhere.
-     *
+     *@author Ruiqiao Jiang
      * @param placementSequence A sequence of placements on the board.
      * @return Whether this placement string is valid.
      */
@@ -173,7 +177,7 @@ public class Metro {
                 String threeDirection = placementSequence.substring(i + 2, i + 3);
                 String fourDirection = placementSequence.substring(i + 3, i + 4);
 
-                // 中央车站判断
+                // judge if it is the centre station
                 if (Arrays.asList(new String[]{"33", "34", "43", "44"}).contains(position)) {
                     return false;
                 } else if (rowNumber == 0 || rowNumber == 7 || colNumber == 0 || colNumber == 7) {
@@ -1007,7 +1011,7 @@ public class Metro {
     }
 
     private static void putData(String placementSequence, Map[][] desk) {
-//        给定方向代表
+//
 //          1 2
 //         8   3
 //         7   4
@@ -1031,6 +1035,7 @@ public class Metro {
         }
     }
 
+
     /**
      * Task 9
      * Given a placement sequence string, generate a valid next move.
@@ -1041,6 +1046,7 @@ public class Metro {
      *                          If the player does not currently hold a tile, this parameter will be null.
      * @param numberOfPlayers   The number of players in the game
      * @return A valid placement of other the drawn tile or the tile from the player's hand (if it is not empty).
+     * @author:Ruiqiao Jiang
      */
     public static String generateMove(String placementSequence, String piece, String hand, int numberOfPlayers) {
         // FIXME Task 9: generate a valid move
@@ -1049,7 +1055,6 @@ public class Metro {
         putData(placementSequence, desk);
         int[] twoPlayers1 = new int[]{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30};
         int[] twoPlayers2 = new int[]{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31};
-
         int[] threePlayers1 = new int[]{0, 3, 5, 10, 14, 19, 22, 24, 27, 30};
         int[] threePlayers2 = new int[]{1, 6, 8, 11, 13, 18, 21, 26, 28, 31};
         int[] threePlayers3 = new int[]{2, 4, 7, 9, 12, 17, 20, 23, 25, 29};

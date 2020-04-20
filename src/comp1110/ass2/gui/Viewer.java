@@ -1,16 +1,21 @@
 package comp1110.ass2.gui;
 
+import comp1110.ass2.Metro;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
@@ -23,7 +28,7 @@ import javafx.stage.Stage;
  */
 public class Viewer extends Application {
     /* board layout */
-    private static final int SQUARE_SIZE = 70;
+    private static final int SQUARE_SIZE = 60;
     private static final int VIEWER_WIDTH = 1024;
     private static final int VIEWER_HEIGHT = 768;
     private static int X_OF_CORNER = 220;
@@ -72,6 +77,23 @@ public class Viewer extends Application {
         }
     }
 
+    class MetroImage extends ImageView {
+        MetroImage(double x, double y, int rotate) {
+            setImage(new Image(Viewer.class.getResource(URI_BASE + "tile_back_cover"+".jpg").toString(),SQUARE_SIZE,SQUARE_SIZE,true,true));
+            setLayoutX(x);
+            setLayoutY(y);
+            this.setRotate(rotate);
+        }
+    }
+
+    class PieceImage extends ImageView {
+        PieceImage(double x, double y, String piece) {
+            setImage(new Image(Viewer.class.getResource(URI_BASE + piece+".jpg").toString(),SQUARE_SIZE,SQUARE_SIZE,true,true));
+            setLayoutX(x);
+            setLayoutY(y);
+        }
+    }
+
 
 
     /**
@@ -91,6 +113,7 @@ public class Viewer extends Application {
 
 
     private String[] toTiles(String placement){
+        if (!Metro.isPlacementSequenceValid(placement)) return null;
         int count = placement.length() / 6;
         String[] tiles = new String[count];
         for(int i =0;i<count;i++){
@@ -123,7 +146,7 @@ public class Viewer extends Application {
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
-            StationImage station = new StationImage(X_OF_CORNER-SQUARE_SIZE,Y_OF_CORNER+SQUARE_SIZE*i,i+9,270);
+            StationImage station = new StationImage(X_OF_CORNER-SQUARE_SIZE,Y_OF_CORNER+SQUARE_SIZE*i,i+9,90);
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
@@ -131,20 +154,59 @@ public class Viewer extends Application {
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
-            StationImage station = new StationImage(X_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE,Y_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE-(i+1)*SQUARE_SIZE,i+25,90);
+            StationImage station = new StationImage(X_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE,Y_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE-(i+1)*SQUARE_SIZE,i+25,270);
             board.getChildren().add(station);
         }
 
-        CentreStationImage centreStation1 = new CentreStationImage(430,280,270);
+        CentreStationImage centreStation1 = new CentreStationImage(400,250,270);
         board.getChildren().add(centreStation1);
-        CentreStationImage centreStation2 = new CentreStationImage(430,350,180);
+        CentreStationImage centreStation2 = new CentreStationImage(400,310,180);
         board.getChildren().add(centreStation2);
-        CentreStationImage centreStation3 = new CentreStationImage(500,280,0);
+        CentreStationImage centreStation3 = new CentreStationImage(460,250,0);
         board.getChildren().add(centreStation3);
-        CentreStationImage centreStation4 = new CentreStationImage(500,350,90);
+        CentreStationImage centreStation4 = new CentreStationImage(460,310,90);
         board.getChildren().add(centreStation4);
+
+        MetroImage metro1 = new MetroImage(160,10,0);
+        board.getChildren().add(metro1);
+        MetroImage metro2 = new MetroImage(160,550,0);
+        board.getChildren().add(metro2);
+        MetroImage metro3 = new MetroImage(700,10,0);
+        board.getChildren().add(metro3);
+        MetroImage metro4 = new MetroImage(700,550,0);
+        board.getChildren().add(metro4);
+
+        Pane node = generateNode("aaaa");
+        node.relocate(800, 110);
+        draggable(node);
+        root.getChildren().addAll(node);
+    }
+    private Pane generateNode(String piece) {
+        Pane node = new StackPane();
+        PieceImage piece1 =new PieceImage(800,110,"aaaa");
+        node.getChildren().addAll(piece1);
+        return node;
     }
 
+    private static class Position {
+        double x;
+        double y;
+    }
+    private void draggable(Node node) {
+        final Position pos = new Position();
+        node.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            pos.x = event.getX();
+            pos.y = event.getY();
+        });
+        node.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
+            double x = node.getLayoutX()+ event.getX() - pos.x;
+            double y = node.getLayoutY()+ event.getY() - pos.y;
+            if (x>220&x<700&&y>70&&y<550)
+            {x=((int)(x-160)/60)*60+160;
+            y=((int)(y-10)/60)*60+10;}
+            node.relocate(x, y);
+        });
+    }
     /**
      * Create a basic text field for input and a refresh button.
      */
@@ -165,7 +227,7 @@ public class Viewer extends Application {
         hb.getChildren().addAll(label1, textField, button);
         hb.setSpacing(10);
         hb.setLayoutX(130);
-        hb.setLayoutY(VIEWER_HEIGHT - 50);
+        hb.setLayoutY(VIEWER_HEIGHT - 100);
         controls.getChildren().add(hb);
     }
 
@@ -183,6 +245,7 @@ public class Viewer extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public static void main(String[] args){
         launch(args);
     }
