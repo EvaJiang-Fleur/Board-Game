@@ -72,6 +72,14 @@ public class Viewer extends Application {
         }
     }
 
+    class CornerImage extends ImageView {
+        CornerImage(double x, double y) {
+            setImage(new Image(Viewer.class.getResource(URI_BASE + "tile_back_cover"+".jpg").toString(),SQUARE_SIZE,SQUARE_SIZE,true,true));
+            setLayoutX(x);
+            setLayoutY(y);
+        }
+    }
+
 
 
     /**
@@ -143,6 +151,15 @@ public class Viewer extends Application {
         board.getChildren().add(centreStation3);
         CentreStationImage centreStation4 = new CentreStationImage(500,350,90);
         board.getChildren().add(centreStation4);
+
+        CornerImage cornerImage1 = new CornerImage(X_OF_CORNER-SQUARE_SIZE,Y_OF_CORNER-SQUARE_SIZE);
+        board.getChildren().add(cornerImage1);
+        CornerImage cornerImage2 = new CornerImage((X_OF_CORNER-SQUARE_SIZE)+SQUARE_SIZE*(NUMER_OF_BLOCKS+1),Y_OF_CORNER-SQUARE_SIZE);
+        board.getChildren().add(cornerImage2);
+        CornerImage cornerImage3 = new CornerImage(X_OF_CORNER-SQUARE_SIZE,(Y_OF_CORNER-SQUARE_SIZE)+SQUARE_SIZE*(NUMER_OF_BLOCKS+1));
+        board.getChildren().add(cornerImage3);
+        CornerImage cornerImage4 = new CornerImage((X_OF_CORNER-SQUARE_SIZE)+SQUARE_SIZE*(NUMER_OF_BLOCKS+1),(Y_OF_CORNER-SQUARE_SIZE)+SQUARE_SIZE*(NUMER_OF_BLOCKS+1));
+        board.getChildren().add(cornerImage4);
     }
 
     /**
