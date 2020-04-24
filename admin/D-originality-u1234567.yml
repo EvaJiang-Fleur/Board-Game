@@ -32,9 +32,9 @@ collaboration:
 # Add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external code)
 code:
-  - comment:
-    url:
-    licence:
+  - comment: refer some code for manu
+    url: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/ImageView.html
+    licence: oracle
 
 # Use this to list any assets (artwork, sound, etc) that you used.
 # Provide a comment explaining your use of that asset and the URL
@@ -43,11 +43,11 @@ code:
 # Add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external assets)
 assets:
-  - comment:
-    url:
-    licence:
+  - comment: picture in the manu
+    url: https://boardgamegeek.com/boardgame/559/metro
+    licence: board game geek
 
 
 # sign *your* name and uid here
-name:
-uid:
+name: Xinyi Zhang
+uid: u6976740
