@@ -123,7 +123,7 @@ public class Viewer extends Application {
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
-            StationImage station = new StationImage(X_OF_CORNER-SQUARE_SIZE,Y_OF_CORNER+SQUARE_SIZE*i,i+9,270);
+            StationImage station = new StationImage(X_OF_CORNER-SQUARE_SIZE,Y_OF_CORNER+SQUARE_SIZE*i,i+9,90);
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
@@ -131,7 +131,7 @@ public class Viewer extends Application {
             board.getChildren().add(station);
         }
         for(int i = 0;i < 8;i++){
-            StationImage station = new StationImage(X_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE,Y_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE-(i+1)*SQUARE_SIZE,i+25,90);
+            StationImage station = new StationImage(X_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE,Y_OF_CORNER+NUMER_OF_BLOCKS*SQUARE_SIZE-(i+1)*SQUARE_SIZE,i+25,270);
             board.getChildren().add(station);
         }
 
