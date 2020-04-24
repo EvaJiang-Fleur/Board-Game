@@ -1042,13 +1042,12 @@ public class Metro {
      *
      * @param placementSequence a String representing the sequence of piece placements made so far in the game
      * @param piece             a four-character String representing the tile just drawn
-     * @param hand              A tile in the player's hand, which they can choose to play instead of the drawn tile.
-     *                          If the player does not currently hold a tile, this parameter will be null.
+
      * @param numberOfPlayers   The number of players in the game
-     * @return A valid placement of other the drawn tile or the tile from the player's hand (if it is not empty).
+     * @return A valid placement of the given tile
      * @author:Ruiqiao Jiang
      */
-    public static String generateMove(String placementSequence, String piece, String hand, int numberOfPlayers) {
+    public static String generateMove(String placementSequence, String piece,  int numberOfPlayers) {
         // FIXME Task 9: generate a valid move
 
         Map[][] desk = new HashMap[8][8];
