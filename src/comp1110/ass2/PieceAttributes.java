@@ -1,11 +1,8 @@
 package comp1110.ass2;
 
-/***
- * Author: designed by u6609958
- *
- * Store strings to describe target piece.
- */
-public class PicecConst {
+public class PieceAttributes {
+
+//    Store strings to describe target piece.
 
     public static final String PIECE_AAAA ="4 16 25 38 47 52 61 74 83";
 

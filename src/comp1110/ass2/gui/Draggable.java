@@ -1,12 +1,7 @@
 package comp1110.ass2.gui;
 
-import com.sun.glass.ui.View;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 
 public class Draggable {
@@ -23,7 +18,7 @@ public class Draggable {
 //    }
 //
 //    void makeBoard() {
-////     (use a loop to add all the tiles)
+////     (use a loop to add all the draggable tiles on the right side of the game board)
 //    Pane node = generateNode(piecestring);
 //        node.relocate(xnumber, ynumber);
 //    draggable(node);
@@ -48,6 +43,7 @@ public class Draggable {
             pos.x = event.getX();
             pos.y = event.getY();
         });
+
         node.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
             double x = node.getLayoutX()+ event.getX() - pos.x;
             double y = node.getLayoutY()+ event.getY() - pos.y;
