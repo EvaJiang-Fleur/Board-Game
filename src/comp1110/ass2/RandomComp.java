@@ -52,10 +52,6 @@ public class RandomComp {
                 drawFromDeck(originalTotalHand,humanMoved), 2);
     }
 
-    public static void main(String[] args) {
-        System.out.println(generateHumanTotalHands());;
-    }
-
     public static String drawFromDeck(String originalTotalHand, String humanMoved) {
         Map<String, Integer> draw = generateTotalHandsAfterMove(originalTotalHand,humanMoved);
         List<String> randomList = new ArrayList<>();
