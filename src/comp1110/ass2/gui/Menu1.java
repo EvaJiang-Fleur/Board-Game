@@ -1,16 +1,12 @@
 package comp1110.ass2.gui;
 
-import comp1110.ass2.gui.assets.MainViewer;
-import comp1110.ass2.gui.assets.Menu2;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.CycleMethod;
@@ -24,10 +20,6 @@ import javafx.scene.text.Text;
 
 import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
-
-
-
-import static java.awt.PageAttributes.MediaType.C2;
 
 
 //get inspiration from Almas Baimagambetov who create a video about JAVAFX game menu
