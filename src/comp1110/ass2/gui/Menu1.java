@@ -1,12 +1,16 @@
 package comp1110.ass2.gui;
 
+import comp1110.ass2.gui.assets.MainViewer;
+import comp1110.ass2.gui.assets.Menu2;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.CycleMethod;
@@ -14,11 +18,16 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+
 import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
+
+
+
+import static java.awt.PageAttributes.MediaType.C2;
 
 
 //get inspiration from Almas Baimagambetov who create a video about JAVAFX game menu
@@ -43,6 +52,7 @@ public class Menu1 extends Application {
         ManuItem exit= new ManuItem("EXIT");
         exit.setOnMouseClicked(e-> System.exit(0));
         ManuItem play = new ManuItem("Play");
+
         ManuItem help = new ManuItem("Help");
         ManuItem setting = new ManuItem("Setting");
         ManuItem tutorial = new ManuItem("Tutorial");
@@ -64,7 +74,10 @@ public class Menu1 extends Application {
         Scene scene = new Scene(createcontent());
         stage.setTitle("Metro");
         stage.setScene(scene);
+
         stage.show();
+
+
 
 
 
