@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -26,8 +27,9 @@ public class Player extends Application {
     private static final int HEIGHT = 768;
 
     private Parent playercontent(){
-        Pane root = new Pane();
-        root.setPrefSize(WIDTH,HEIGHT);
+        AnchorPane root = new AnchorPane();
+        root.setPrefWidth(WIDTH);
+        root.setPrefHeight(HEIGHT);
 
         Image image=new Image("/comp1110/ass2/gui/assets/background.jpg");
 
