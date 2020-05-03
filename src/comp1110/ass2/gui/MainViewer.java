@@ -1,4 +1,4 @@
-package comp1110.ass2.gui.assets;
+package comp1110.ass2.gui;
 
 import comp1110.ass2.gui.Menu1;
 import comp1110.ass2.gui.Viewer;
