@@ -1,6 +1,8 @@
 package comp1110.ass2.gui;
 
+import comp1110.ass2.gui.Menu2;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,8 +21,12 @@ import javafx.stage.Stage;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
+
 import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
+import javafx.util.Pair;
+import java.util.Arrays;
+import java.util.List;
 
 
 //get inspiration from Almas Baimagambetov who create a video about JAVAFX game menu
@@ -42,10 +48,14 @@ public class Menu1 extends Application {
         imageView.setFitHeight(HEIGHT);
         root.getChildren().add(imageView);
 
+
         //set the bottom for interface
         ManuItem exit= new ManuItem("EXIT");
         exit.setOnMouseClicked(e-> System.exit(0));
         ManuItem play = new ManuItem("Play");
+        play.setOnMouseClicked(e -> {
+            new Viewer();
+        });
 
         ManuItem help = new ManuItem("Help");
         ManuItem setting = new ManuItem("Setting");
