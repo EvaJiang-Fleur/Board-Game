@@ -58,6 +58,7 @@ public class Menu1 extends Application {
             System.out.println("Calling Platform.exit()");
             Platform.exit();
         });
+        //jump to player page
         ManuItem play = new ManuItem("Play");
         play.setOnMouseClicked(event -> {
             Player open  = new Player();
@@ -69,6 +70,7 @@ public class Menu1 extends Application {
             stage.hide();
         });
 
+        //jump to information page
         ManuItem information = new ManuItem("Info");
         information.setOnMouseClicked(event -> {
             Information info  = new Information();

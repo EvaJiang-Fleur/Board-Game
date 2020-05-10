@@ -29,6 +29,7 @@ public class Information extends Application {
     private static final int HEIGHT = 768;
     private AnchorPane root = new AnchorPane();
 
+//add a private class for title
     private void addTitle() {
         Rectangle rectangle= new Rectangle(325,50);
         rectangle.setLayoutX(350);
@@ -44,10 +45,8 @@ public class Information extends Application {
         root.getChildren().addAll(rectangle,label);
     }
 
-
-
-    private Parent createContent() {
-        addTitle();
+    //add private class for background image
+    private void addbackgroundImage(){
         Image image=new Image("/comp1110/ass2/gui/assets/background.jpg");
 
         ImageView imageView = new ImageView(image);
@@ -55,6 +54,12 @@ public class Information extends Application {
         imageView.setFitHeight(HEIGHT);
         root.getChildren().add(imageView);
 
+    }
+
+//put all the class together
+    private Parent createContent() {
+        addbackgroundImage();
+        addTitle();
 
         ManuItem author1 = new ManuItem("Xinyi Zhang u6976740");
         ManuItem author2 = new ManuItem("Ruiqiao Jiang u6918746");
@@ -106,8 +111,9 @@ public class Information extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Information");
-        Scene scene = new Scene(createContent());
+        addbackgroundImage();
         addTitle();
+        Scene scene = new Scene(createContent());
         stage.setScene(scene);
         stage.show();
 
