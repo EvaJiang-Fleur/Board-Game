@@ -1,0 +1,34 @@
+# Write your name and UID here.
+#
+reviewer:
+    name: Yvonne(Xinyi) Zhang
+    uid: u6976740
+
+# Write the name of the author of the code here.
+#
+author:
+  name: Xinyao Wang
+  uid: u6609958
+
+# Write the class or method being reviewed here.
+#
+component: Viewer class, Draggable class
+
+# Write a list of review comments here.
+#
+comments:
+  - it is good to make tile dragabble in the viewer class
+  - it is good when the tile place in the wrong place, it can show the error message
+  - it is good to use different classes to control the viewer page
+  - the code is not quite well- documented, the code should be easier to read
+  - it is better to create a new class for the main viewer
+  - it is also better to reduce the redundant code for arrange the tile
+  - the variable and the method can be read, but it can have easier way to simplify the code
+  - the interface looks messy, it is better to arrange in a simple way
+  - some function still cannot be achieved in the class(such as choose diffculty)
+  - it is better to rearrange the code into different class, such as each class do the individual part of work, therefore, it can be easier to understand.
+
+
+
+
+
