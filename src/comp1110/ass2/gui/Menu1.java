@@ -69,11 +69,20 @@ public class Menu1 extends Application {
             stage.hide();
         });
 
-        ManuItem help = new ManuItem("Help");
+        ManuItem information = new ManuItem("Info");
+        information.setOnMouseClicked(event -> {
+            Information info  = new Information();
+            try {
+                info.start(new Stage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            stage.hide();
+        });
         ManuItem setting = new ManuItem("Setting");
         ManuItem tutorial = new ManuItem("Tutorial");
 
-        ManuBox menu = new ManuBox(play,help,setting,tutorial,exit);
+        ManuBox menu = new ManuBox(play,information,setting,tutorial,exit);
 
         menu.setTranslateX(415);
         menu.setTranslateY(340);
