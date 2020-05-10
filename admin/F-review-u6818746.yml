@@ -17,11 +17,11 @@ component: player;menu1
 # Write a list of review comments here.
 #
 comments:
-  -it is good to optimize the menu1
-  -it is good to change the color and size of the texts
-  -it is good that we can switch the scene in the game
-  -it is better if we can add sound(music) in the game
-  -it is better if different number of plays can represent different interfaces
+  - it is good to optimize the menu1
+  - it is good to change the color and size of the texts
+  - it is good that we can switch the scene in the game
+  - it is better if we can add sound(music) in the game
+  - it is better if different number of plays can represent different interfaces
 
 
 
