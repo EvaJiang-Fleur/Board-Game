@@ -1,15 +1,12 @@
 package comp1110.ass2.gui;
 
-import comp1110.ass2.gui.Menu2;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.CycleMethod;
@@ -22,22 +19,28 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 
+
 import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
-import javafx.util.Pair;
-import java.util.Arrays;
-import java.util.List;
+
 
 
 //get inspiration from Almas Baimagambetov who create a video about JAVAFX game menu
 //the youtube link is https://www.youtube.com/watch?v=PTwpDkUMowk&t=1s
 //make the improvement based on ruiqiao jiang's code
+/**
+ * @author Yvonne(Xinyi) Zhang
+ * discuss with ruiqiao jiang
+ */
 public class Menu1 extends Application {
     private static final int WIDTH = 1024;
     private static final int HEIGHT = 768;
 
-    private Parent createcontent(){
+    @Override
+    public void start(Stage stage) throws Exception {
         AnchorPane root = new AnchorPane();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
         root.setPrefWidth(WIDTH);
         root.setPrefHeight(HEIGHT);
 
@@ -51,10 +54,19 @@ public class Menu1 extends Application {
 
         //set the bottom for interface
         ManuItem exit= new ManuItem("EXIT");
-        exit.setOnMouseClicked(e-> System.exit(0));
+        exit.setOnMouseClicked(e-> {
+            System.out.println("Calling Platform.exit()");
+            Platform.exit();
+        });
         ManuItem play = new ManuItem("Play");
-        play.setOnMouseClicked(e -> {
-            new Viewer();
+        play.setOnMouseClicked(event -> {
+            Player open  = new Player();
+            try {
+                open.start(new Stage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            stage.hide();
         });
 
         ManuItem help = new ManuItem("Help");
@@ -69,20 +81,10 @@ public class Menu1 extends Application {
         root.getChildren().add(menu);
 
 
-        return root;
-
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(createcontent());
         stage.setTitle("Metro");
-        stage.setScene(scene);
+
 
         stage.show();
-
-
-
 
 
     }

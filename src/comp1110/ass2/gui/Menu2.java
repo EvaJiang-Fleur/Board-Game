@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import static javafx.application.Application.launch;
+
 
 public class Menu2 extends Application  {
         public static void main(String[] args) {
