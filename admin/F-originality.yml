@@ -14,6 +14,13 @@ declaration: >-
   and all stages before it is entirely our own work, with the following
   exceptions:
 
+code:
+
+  - comment: based on the tutorial to create the author information page
+    url: https://www.youtube.com/watch?v=PTwpDkUMowk&t=1s
+    licence: Almas Baimagambetov
+
+
 
 # Sign *your* name and uids here. (Remove entries if you have fewer
 # than three members.)

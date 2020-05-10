@@ -7,13 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -21,10 +18,16 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+//get inspiration from Almas Baimagambetov who create a video about JAVAFX game menu
+//the youtube link is https://www.youtube.com/watch?v=PTwpDkUMowk&t=1s
+/**
+ * @author Yvonne(Xinyi) Zhang
+ */
+
 public class Information extends Application {
     private static final int WIDTH = 1024;
     private static final int HEIGHT = 768;
-    private Pane root = new Pane();
+    private AnchorPane root = new AnchorPane();
 
     private void addTitle() {
         Rectangle rectangle= new Rectangle(325,50);
@@ -68,13 +71,6 @@ public class Information extends Application {
     }
     private static class ManuItem extends StackPane {
         public ManuItem(String name){
-            Stop[] stop= new Stop[]{
-                    new Stop(0, Color.valueOf("#f78e8b")),
-                    new Stop(0.3,Color.valueOf("#f2716d")),
-                    new Stop(0.5,Color.valueOf("#d6413c")),
-                    new Stop(0.8,Color.valueOf("#f2716d")),
-                    new Stop(1,Color.valueOf("#f78e8b"))};
-            LinearGradient lg = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stop);
             Rectangle rectangle= new Rectangle(450,50);
             rectangle.setFill(Color.valueOf("#fcd4d4"));
             rectangle.setOpacity(0.8);
