@@ -1,0 +1,28 @@
+# Write your name and UID here.
+#
+reviewer:
+    name: Xinyao Wang
+    uid: u6609958
+
+# Write the name of the author of the code here.
+#
+author:
+  name: Ruiqiao Jiang
+  uid: u6818746
+
+# Write the class or method being reviewed here.
+#
+component: Metro class
+
+# Write a list of review comments here.
+#
+comments:
+  -The code shows a good understanding of shows a good understanding of strings and arrays，and has a clear logic.
+  -Each method is clearly stated in the task, the code is basically well-documented.
+  -The class and method structure are written according to the position given by the task, there‘s still room for improvement.
+  -The methods and variables are properly named.
+  -If you suspect an error in the code, suggest a particular situation in which the program will not function correctly.
+  -The method isPlacementSequenceValid return false when input "dbcd00".
+
+
+
