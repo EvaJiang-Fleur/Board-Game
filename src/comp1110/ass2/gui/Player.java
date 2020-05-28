@@ -46,7 +46,7 @@ public class Player extends Application {
 
         playerPage player2 = new playerPage("Two Players");
         player2.setOnMouseClicked(event -> {
-            Menu2 open  = new Menu2();
+            MainViewer open  = new MainViewer();
             try {
                 open.start(new Stage());
             } catch (Exception e) {

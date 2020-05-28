@@ -61,7 +61,7 @@ public class Menu1 extends Application {
         //jump to player page
         ManuItem play = new ManuItem("Play");
         play.setOnMouseClicked(event -> {
-            Player open  = new Player();
+            MainViewer open  = new MainViewer();
             try {
                 open.start(new Stage());
             } catch (Exception e) {
@@ -81,10 +81,19 @@ public class Menu1 extends Application {
             }
             stage.hide();
         });
-        ManuItem setting = new ManuItem("Setting");
-        ManuItem tutorial = new ManuItem("Tutorial");
 
-        ManuBox menu = new ManuBox(play,information,setting,tutorial,exit);
+        ManuItem tutorial = new ManuItem("Tutorial");
+        tutorial.setOnMouseClicked(event -> {
+            Tutorial info  = new Tutorial();
+            try {
+                info.start(new Stage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            stage.hide();
+        });
+
+        ManuBox menu = new ManuBox(play,information,tutorial,exit);
 
         menu.setTranslateX(415);
         menu.setTranslateY(340);

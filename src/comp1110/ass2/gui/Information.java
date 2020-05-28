@@ -1,9 +1,11 @@
 package comp1110.ass2.gui;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -56,10 +58,36 @@ public class Information extends Application {
 
     }
 
-//put all the class together
+    private void exit() {
+        Rectangle rectangle= new Rectangle(110,50);
+        rectangle.setLayoutX(700);
+        rectangle.setLayoutY(600);
+        rectangle.setFill(Color.BLACK);
+        Label label=new Label("Exit");
+        label.setLayoutX(720);
+        label.setLayoutY(605);
+        label.setFont(Font.font("Verdana", FontWeight.BOLD,30));
+        label.setTextFill(Color.WHITE);
+        label.setOnMouseClicked(event -> {
+            Menu1 open  = new Menu1();
+            try {
+                open.start(new Stage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        root.getChildren().addAll(rectangle,label);
+    }
+
+
+
+    //put all the class together
     private Parent createContent() {
         addbackgroundImage();
         addTitle();
+        exit();
 
         ManuItem author1 = new ManuItem("Xinyi Zhang u6976740");
         ManuItem author2 = new ManuItem("Ruiqiao Jiang u6918746");
