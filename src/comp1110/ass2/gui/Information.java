@@ -62,7 +62,7 @@ public class Information extends Application {
         addTitle();
 
         ManuItem author1 = new ManuItem("Xinyi Zhang u6976740");
-        ManuItem author2 = new ManuItem("Ruiqiao Jiang u6918746");
+        ManuItem author2 = new ManuItem("Ruiqiao Jiang u6818746");
         ManuItem author3 = new ManuItem("Xinyao Wang u6609958");
 
         ManuBox menu = new ManuBox(author1,author2,author3);
