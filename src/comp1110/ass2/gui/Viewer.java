@@ -205,6 +205,12 @@ public class Viewer extends Application {
 
     }
 
+    /**
+     * generate tile on the viewer and make the tile picture draggable
+     * @author Xinayo Wang
+     */
+
+    // generate the first picture of tile
     void moveableTile(){ ;
         Pane node = generateNode(a);
         node.relocate(800, 60);
@@ -212,17 +218,20 @@ public class Viewer extends Application {
         root.getChildren().addAll(node);
     }
 
+   // generate the string corresponding picture as node
     private Pane generateNode(String piece) {
-        Pane pane = new StackPane();
-        PieceImage piece1 =new PieceImage(0,0,piece);
-        pane.getChildren().addAll(piece1);
-        return pane;
+        Pane node = new StackPane();
+        PieceImage piece_n =new PieceImage(0,0,piece);
+        node.getChildren().addAll(piece_n);
+        return node;
     }
 
     private static class Position {
         double x;
         double y;
     }
+
+    // make the corresponding tile draggable
     private void draggable(Pane pane, String tileName) {
         final Position pos = new Position();
         pane.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
@@ -231,6 +240,8 @@ public class Viewer extends Application {
             double x=event.getX();
             if (textField9.getText().length()<2){textField9.setText(a);}
         });
+
+        //press the mouth to catch the node and generate a smaller picture of the node
         pane.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
             double x = pane.getLayoutX()+ event.getX() - pos.x;
             double y = pane.getLayoutY()+ event.getY() - pos.y;
@@ -243,6 +254,9 @@ public class Viewer extends Application {
             pane.setOpacity(0.5);
             pane.relocate(x, y);
         });
+
+        // release the mouse, if you put the picture you dragged in right place, it will generate a new picture
+        // if have player and pc number, generate pc move after you release the mouse in right place
         pane.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> {
             pane.setOpacity(1.0);
             double x = pane.getLayoutX()+ event.getX() - pos.x;
@@ -261,6 +275,8 @@ public class Viewer extends Application {
                 node.relocate(800, 60);
                 draggable(node,a);
                 root.getChildren().addAll(node);
+
+                //generate pc move, the times is according to the pc number
                 int i= (Integer.parseInt(textField12.getText()));
                 if (textField12.getText().length()!=1||i<1||i>6) { textField12.setText("6");i=6;}
                 if ((textField2.getText().toString().equals("1")||textField2.getText().equals("random"))&&
@@ -320,12 +336,10 @@ public class Viewer extends Application {
                 textField13.setText(textField13.getText()+textField.getText());
                 String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                 textField9.setText(b);}
-
-
-
-
         }else {textField11.setText("Wrong place");
         }
+
+            // upadate the score after release mouse
             if (Integer.parseInt(textField12.getText())>1&&Integer.parseInt(textField12.getText())<7)
             textField14.setText(""+ (Metro.getScore(textField13.getText(),Integer.parseInt(textField12.getText()))[0]));
             textField15.setText(""+ (Metro.getScore(textField13.getText(),Integer.parseInt(textField12.getText()))[1]));
@@ -373,6 +387,9 @@ public class Viewer extends Application {
 
     }
 
+    /**
+     * Create text fields to input the number of player, pc move and show the scores.
+     */
     private void makeControls2() {
         Label label1 = new Label("tile name:");
         textField9 = new TextField();
