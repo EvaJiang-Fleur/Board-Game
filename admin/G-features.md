@@ -10,3 +10,6 @@ of our project implements the following features:
  - Playable against a computer opponent (Task 10)
 
 additional features...
+
+ - Design a main interface 
+ - Give game introduction
