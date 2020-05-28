@@ -205,6 +205,12 @@ public class Viewer extends Application {
 
     }
 
+    /**
+     * generate tile on the viewer and make the tile picture draggable
+     * @author Xinayo Wang
+     */
+
+    // generate the first picture of tile
     void moveableTile(){ ;
         Pane node = generateNode(a);
         node.relocate(800, 60);
@@ -212,17 +218,20 @@ public class Viewer extends Application {
         root.getChildren().addAll(node);
     }
 
+   // generate the string corresponding picture as node
     private Pane generateNode(String piece) {
-        Pane pane = new StackPane();
-        PieceImage piece1 =new PieceImage(0,0,piece);
-        pane.getChildren().addAll(piece1);
-        return pane;
+        Pane node = new StackPane();
+        PieceImage piece_n =new PieceImage(0,0,piece);
+        node.getChildren().addAll(piece_n);
+        return node;
     }
 
     private static class Position {
         double x;
         double y;
     }
+
+    // make the corresponding tile draggable
     private void draggable(Pane pane, String tileName) {
         final Position pos = new Position();
         pane.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
@@ -231,6 +240,8 @@ public class Viewer extends Application {
             double x=event.getX();
             if (textField9.getText().length()<2){textField9.setText(a);}
         });
+
+        //press the mouth to catch the node and generate a smaller picture of the node
         pane.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
             double x = pane.getLayoutX()+ event.getX() - pos.x;
             double y = pane.getLayoutY()+ event.getY() - pos.y;
@@ -243,6 +254,9 @@ public class Viewer extends Application {
             pane.setOpacity(0.5);
             pane.relocate(x, y);
         });
+
+        // release the mouse, if you put the picture you dragged in right place, it will generate a new picture
+        // if have player and pc number, generate pc move after you release the mouse in right place
         pane.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> {
             pane.setOpacity(1.0);
             double x = pane.getLayoutX()+ event.getX() - pos.x;
@@ -261,7 +275,10 @@ public class Viewer extends Application {
                 node.relocate(800, 60);
                 draggable(node,a);
                 root.getChildren().addAll(node);
+
+                //generate pc move, the times is according to the pc number
                 int i= (Integer.parseInt(textField12.getText()));
+                if (textField12.getText().length()!=1||i<1||i>6) { textField12.setText("6");i=6;}
                 if ((textField2.getText().toString().equals("1")||textField2.getText().equals("random"))&&
                         i>1&&i<7)
                 { textField.setText(Metro.generateMove(textField13.getText(),a,i));
@@ -270,7 +287,7 @@ public class Viewer extends Application {
                     String onea =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                     textField9.setText(onea);
                 }
-                else if (textField2.getText().toString().equals("2")){
+                else if (i>2&& textField2.getText().toString().equals("2")){
                     String twoa =Metro.generateMove(textField13.getText(),a,i);
                     String a1= Metro.drawFromDeck(textField13.getText()+twoa,"");
                     String twob =Metro.generateMove(textField13.getText()+twoa,a1,i);
@@ -280,7 +297,7 @@ public class Viewer extends Application {
                     String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                     textField9.setText(b);
                 }
-                else if (textField2.getText().toString().equals("3"))
+                else if (i>3&& textField2.getText().toString().equals("3"))
                     {   String threea =Metro.generateMove(textField13.getText(),a,i);
                         String a1= Metro.drawFromDeck(textField13.getText()+threea,"");
                         String threeb =Metro.generateMove(textField13.getText()+threea,a1,i);
@@ -291,7 +308,7 @@ public class Viewer extends Application {
                         textField13.setText(textField13.getText()+textField.getText());
                         String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                         textField9.setText(b);}
-                 else if (textField2.getText().toString().equals("4"))
+                 else if (i>4&& textField2.getText().toString().equals("4"))
                      {   String foura =Metro.generateMove(textField13.getText(),a,(Integer.parseInt(textField12.getText())));
                          String a1= Metro.drawFromDeck(textField13.getText()+foura,"");
                          String fourb =Metro.generateMove(textField13.getText()+foura,a1,i);
@@ -304,7 +321,7 @@ public class Viewer extends Application {
                          textField13.setText(textField13.getText()+textField.getText());
                          String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                          textField9.setText(b);}
-            else if (textField2.getText().toString().equals("5"))
+            else if (i>5&& textField2.getText().toString().equals("5"))
             {   String fivea =Metro.generateMove(textField13.getText(),a,(Integer.parseInt(textField12.getText())));
                 String a1= Metro.drawFromDeck(textField13.getText()+fivea,"");
                 String fiveb =Metro.generateMove(textField13.getText()+fivea,a1,i);
@@ -319,12 +336,10 @@ public class Viewer extends Application {
                 textField13.setText(textField13.getText()+textField.getText());
                 String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                 textField9.setText(b);}
-
-
-
-
         }else {textField11.setText("Wrong place");
         }
+
+            // upadate the score after release mouse
             if (Integer.parseInt(textField12.getText())>1&&Integer.parseInt(textField12.getText())<7)
             textField14.setText(""+ (Metro.getScore(textField13.getText(),Integer.parseInt(textField12.getText()))[0]));
             textField15.setText(""+ (Metro.getScore(textField13.getText(),Integer.parseInt(textField12.getText()))[1]));
@@ -366,12 +381,15 @@ public class Viewer extends Application {
         HBox hb = new HBox();
         hb.getChildren().addAll(label1, textField, button,button2);
         hb.setSpacing(10);
-        hb.setLayoutX(130);
+        hb.setLayoutX(1200);
         hb.setLayoutY(VIEWER_HEIGHT - 95);
         controls.getChildren().add(hb);
 
     }
 
+    /**
+     * Create text fields to input the number of player, pc move and show the scores.
+     */
     private void makeControls2() {
         Label label1 = new Label("tile name:");
         textField9 = new TextField();
@@ -407,7 +425,7 @@ public class Viewer extends Application {
         textField19 = new TextField();
         textField19.setPrefWidth(100);
 
-        Label label12 = new Label("pc:");
+        Label label12 = new Label("pc move:");
         textField2 = new TextField();
         textField2.setPrefWidth(50);
 
@@ -423,7 +441,7 @@ public class Viewer extends Application {
         hb4.getChildren().addAll(label6,textField14,label7,textField15,label8,textField16);
         hb5.getChildren().addAll(label9,textField17,label10,textField18,label11,textField19);
         hb6.getChildren().addAll( label2,textField10,label3,textField11,label5,textField13);
-        hb.setLayoutX(780);
+        hb.setLayoutX(1200);
         hb.setLayoutY(VIEWER_HEIGHT - 400);
         hb2.setLayoutX(780);
         hb2.setLayoutY(VIEWER_HEIGHT - 350);
@@ -434,7 +452,7 @@ public class Viewer extends Application {
         hb5.setLayoutX(780);
         hb5.setLayoutY(VIEWER_HEIGHT - 200);
 
-        hb6.setLayoutX(560);
+        hb6.setLayoutX(1500);
         hb6.setLayoutY(VIEWER_HEIGHT - 95);
         controls.getChildren().add(hb);
         controls.getChildren().add(hb2);
