@@ -262,6 +262,7 @@ public class Viewer extends Application {
                 draggable(node,a);
                 root.getChildren().addAll(node);
                 int i= (Integer.parseInt(textField12.getText()));
+                if (textField12.getText().length()!=1||i<1||i>6) { textField12.setText("6");i=6;}
                 if ((textField2.getText().toString().equals("1")||textField2.getText().equals("random"))&&
                         i>1&&i<7)
                 { textField.setText(Metro.generateMove(textField13.getText(),a,i));
@@ -270,7 +271,7 @@ public class Viewer extends Application {
                     String onea =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                     textField9.setText(onea);
                 }
-                else if (textField2.getText().toString().equals("2")){
+                else if (i>2&& textField2.getText().toString().equals("2")){
                     String twoa =Metro.generateMove(textField13.getText(),a,i);
                     String a1= Metro.drawFromDeck(textField13.getText()+twoa,"");
                     String twob =Metro.generateMove(textField13.getText()+twoa,a1,i);
@@ -280,7 +281,7 @@ public class Viewer extends Application {
                     String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                     textField9.setText(b);
                 }
-                else if (textField2.getText().toString().equals("3"))
+                else if (i>3&& textField2.getText().toString().equals("3"))
                     {   String threea =Metro.generateMove(textField13.getText(),a,i);
                         String a1= Metro.drawFromDeck(textField13.getText()+threea,"");
                         String threeb =Metro.generateMove(textField13.getText()+threea,a1,i);
@@ -291,7 +292,7 @@ public class Viewer extends Application {
                         textField13.setText(textField13.getText()+textField.getText());
                         String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                         textField9.setText(b);}
-                 else if (textField2.getText().toString().equals("4"))
+                 else if (i>4&& textField2.getText().toString().equals("4"))
                      {   String foura =Metro.generateMove(textField13.getText(),a,(Integer.parseInt(textField12.getText())));
                          String a1= Metro.drawFromDeck(textField13.getText()+foura,"");
                          String fourb =Metro.generateMove(textField13.getText()+foura,a1,i);
@@ -304,7 +305,7 @@ public class Viewer extends Application {
                          textField13.setText(textField13.getText()+textField.getText());
                          String b =Metro.drawFromDeck(textField13.getText() +textField11.getText(),"");
                          textField9.setText(b);}
-            else if (textField2.getText().toString().equals("5"))
+            else if (i>5&& textField2.getText().toString().equals("5"))
             {   String fivea =Metro.generateMove(textField13.getText(),a,(Integer.parseInt(textField12.getText())));
                 String a1= Metro.drawFromDeck(textField13.getText()+fivea,"");
                 String fiveb =Metro.generateMove(textField13.getText()+fivea,a1,i);
@@ -366,7 +367,7 @@ public class Viewer extends Application {
         HBox hb = new HBox();
         hb.getChildren().addAll(label1, textField, button,button2);
         hb.setSpacing(10);
-        hb.setLayoutX(130);
+        hb.setLayoutX(1200);
         hb.setLayoutY(VIEWER_HEIGHT - 95);
         controls.getChildren().add(hb);
 
@@ -407,7 +408,7 @@ public class Viewer extends Application {
         textField19 = new TextField();
         textField19.setPrefWidth(100);
 
-        Label label12 = new Label("pc:");
+        Label label12 = new Label("pc move:");
         textField2 = new TextField();
         textField2.setPrefWidth(50);
 
@@ -423,7 +424,7 @@ public class Viewer extends Application {
         hb4.getChildren().addAll(label6,textField14,label7,textField15,label8,textField16);
         hb5.getChildren().addAll(label9,textField17,label10,textField18,label11,textField19);
         hb6.getChildren().addAll( label2,textField10,label3,textField11,label5,textField13);
-        hb.setLayoutX(780);
+        hb.setLayoutX(1200);
         hb.setLayoutY(VIEWER_HEIGHT - 400);
         hb2.setLayoutX(780);
         hb2.setLayoutY(VIEWER_HEIGHT - 350);
@@ -434,7 +435,7 @@ public class Viewer extends Application {
         hb5.setLayoutX(780);
         hb5.setLayoutY(VIEWER_HEIGHT - 200);
 
-        hb6.setLayoutX(560);
+        hb6.setLayoutX(1500);
         hb6.setLayoutY(VIEWER_HEIGHT - 95);
         controls.getChildren().add(hb);
         controls.getChildren().add(hb2);
