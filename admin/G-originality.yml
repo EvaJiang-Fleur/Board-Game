@@ -14,23 +14,10 @@ declaration: >-
   everything we have submitted for for all stages of this assignment was
   entirely our own work, with the following exceptions:
 
-# Use this to list any assets (artwork, sound, etc) that you used.
-# Provide a comment explaining your use of that asset and the URL
-# and license for the asset
-#
-# Add as many "url+licence+comment" entries as necessary
-# (or remove it altogether if you haven't used any external assets)
-assets:
-  - comment: the picture of brief tutorial in tutorial class
-    url: https://tesera.ru/images/items/94746/MetroEN.pdf
-    licence: Metro queen games
-
-
 
 # Sign *your* name and uids here. (Remove entries if you have fewer
 # than three members.)
 signatures:
-
   - name: Ruiqiao Jiang
     uid: u6818746
   - name: Xinyi Zhang
