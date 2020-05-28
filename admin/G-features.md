@@ -7,6 +7,6 @@ of our project implements the following features:
  - A basic playable game
  - A basic playable game that snaps pieces to the board and checks for validity (Task 9)
  - Computes a score for the game (Task 8)
- - Playable against a computer opponent (Task 11)
+ - Playable against a computer opponent (Task 10)
 
 additional features...
